@@ -49,8 +49,8 @@ display: none;
 main{
   overflow-y: scroll;
   background-color: transparent !important;
-  height: 85vh;
-}
+  height: 100%;
+} 
 main::-webkit-scrollbar{
   width: 0px;
 }

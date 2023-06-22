@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import {AiOutlineDashboard,
   AiOutlineShoppingCart,
   AiOutlineUser,
@@ -41,7 +41,7 @@ import { useNavigate } from 'react-router-dom';
             mode="inline"
             defaultSelectedKeys={['']}
             onClick={({key})=>{
-              if(key=="signout"){
+              if(key==="signout"){
 
               }else{
                 navigate(key);
@@ -68,7 +68,7 @@ import { useNavigate } from 'react-router-dom';
                 label: 'Add Product',
                 },
                 {
-                  key: 'product-list',
+                  key: 'list-product',
                   icon: <AiOutlineShoppingCart className='fs-4' />,
                   label: 'Product List',
                   },
@@ -95,7 +95,7 @@ import { useNavigate } from 'react-router-dom';
                 {
                   key: 'color',
                   icon: <AiOutlineBgColors className='fs-4' />,
-                  label: 'Color',
+                  label: 'Colors',
                 },
                 {
                   key: 'list-color',
@@ -112,7 +112,7 @@ import { useNavigate } from 'react-router-dom';
               {
                 key: 'blogs',
                 icon: <FaBloggerB className='fs-4' />,
-                label: 'Blog',
+                label: 'Blogs',
                 children:[
                 {
                 key: 'blog',
@@ -162,7 +162,7 @@ import { useNavigate } from 'react-router-dom';
                 height: 64,
               }}
             />
-            <div className='d-flex gap-4 align-items-center'>
+            <div className='d-flex gap-4 align-items-center dropdown'>
               <div className='position-relative'>
                 <IoIosNotifications className='fs-4'/>
                 <span className='badge bg-warning rounded-circle p-1 position-absolute'>3</span>
@@ -171,9 +171,23 @@ import { useNavigate } from 'react-router-dom';
                 <div >
                   <img width={40} height={40} src="https://res.cloudinary.com/dws9akab8/image/upload/c_scale,h_64,w_64/v1677849703/cld-sample.jpg"  alt="" />
                 </div>
-              <div>
+              <div role="button" 
+              id="dropdownMenuLink" 
+              data-bs-toggle="dropdown" 
+              aria-expanded="false">
                 <h5 className='mb-0'>Keerthi</h5>
                 <p className='mb-0'>keerthiga4010@gmail.com</p>
+              </div>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <li><Link className="dropdown-item py-1 mb-1" style=
+              {{"height":"auto","lineHeight":"20px"}} to="#">
+                View Profile
+                </Link></li>
+              <li>
+                <Link className="dropdown-item py-1 mb-1" style=
+              {{"height":"auto","lineHeight":"20px"}} to="#">
+              Signout</Link></li>
+              
               </div>
               </div>
             </div>
