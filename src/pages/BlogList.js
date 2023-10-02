@@ -8,10 +8,14 @@ const columns = [
     {
       title: 'Name',
       dataIndex: 'name',
+      sorter: (a, b) => a.name.length - b.name.length,
+
     },
     {
       title: 'Product',
       dataIndex: 'product',
+      sorter: (a, b) => a.product.length - b.product.length,
+
     },
     {
       title: 'Status',
